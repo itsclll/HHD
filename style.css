@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald:700');
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  font-family: 'Oswald', sans-serif;
+}
+
+.container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 0;
+  width: 0;
+}
+
+.decoration-square {
+  width: 48vh;
+  height: 48vh;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%) translateZ(-40px) rotate(45deg);
+  box-sizing: border-box;
+  border : 10px solid #E6BE8A;
+}
+
+.decoration-square:after {
+  content: " ";
+  display: block;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  border : 10px solid #f9e1d5;
+}
+
+.flower {
+  height: 40vh;
+  width: 40vh;
+  position: absolute;
+  left: -20vh;
+  top: -20vh;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 50% 50%;
+}
+
+.flower.bagonia {
+  background-image: url("https://raw.githubusercontent.com/trinketmage/trinketmage.github.io/master/static/flowers/bagonia.png");
+}
+
+.flower.watercolor {
+  background-image: url("https://raw.githubusercontent.com/trinketmage/trinketmage.github.io/master/static/flowers/watercolor.png");
+  height: 29vh;
+  width: 29vh;
+  left: -6vh;
+  top: -7vh;
+  transform: translateZ(-20px);
+}
+
+.flower.flower-1 {
+  left: -29vh;
+  top: -32vh;
+  width: 30vh;
+  height: 30vh;
+  transform: rotate(-10deg);
+}
+
+.flower.flower-2 {
+  left: 0vh;
+  top: 0vh;
+  width: 34vh;
+  height: 34vh;
+  transform: rotate(15deg);
+}
+
+.flower.flower-3 {
+  left: -25vh;
+  top: 7vh;
+  width: 36vh;
+  height: 36vh;
+  transform: rotate(-8deg);
+}
+
+.flower.flower-4 {
+  left: 0vh;
+  top: -30vh;
+  width: 39vh;
+  height: 39vh;
+  transform: rotate(5deg);
+}
+
+.flower.flower-5 {
+  z-index: 1;
+}
+
+.flower.flower-6 {
+  top: -28vh;
+  left: -10vh;
+  width: 28vh;
+  height: 28vh;
+}
+
+.flower.flower-7 {
+  left: -34vh;
+}
+
+a {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  transition: color .3s ease;
+  color: #1d1f20;
+}
+
+a:hover {
+  color: #f9e1d5;
+}
+
+.greeting {
+  position: absolute;
+  top: calc(50% + 30vh); 
+  left: 50%;
+  transform: translateX(-50%);
+  color: #ea8585; 
+  font-size: 3em;
+  font-weight: bold;
+}
