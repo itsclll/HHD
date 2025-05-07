@@ -1,0 +1,38 @@
+.name {
+    color: beige;
+    text-align: center;
+    padding-top: 30px;
+}
+
+.profilepic {
+    display: block;
+    width: 300px;
+    height: 300px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 50%;
+    transition: transform 0.5s;
+}
+
+.profilepic:hover {
+    transform: scale(1.1);
+}
+
+.sportpic {
+    display: block;
+    width: 300px;
+    height: 200px;
+    margin: 10px auto;
+}
+
+.sport, .hobbies {
+    color: beige;
+    font-size: larger;
+    text-align: center;
+    margin-top: 40px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
