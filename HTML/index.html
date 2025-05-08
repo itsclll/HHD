@@ -2,46 +2,65 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Profile</title>
-    <link rel="stylesheet" href="/CSS/style.css">
+    <title>My Unique Web Card</title>
     <style>
         body {
-            background-image: url('/Images/download (2).jpg'); /* Removed the backslash */
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-size: cover;
-            margin: 0;
+            background-color: red; /* Students must change this */
             font-family: Arial, sans-serif;
+            padding: 40px;
+            color: green;
+        }
+        .card {
+            background-color: pink;
+            border-left: 10px solid #00695c;
+            padding: 20px;
+            max-width: 600px;
+            margin: auto;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #777;
         }
     </style>
 </head>
 <body>
-    <div class="name">
-        <h1>Christian A. Lucina</h1>
-        <h2>BSIT 3rd Year</h2>
-        <h4>Location: Poblacion, Sudipen, La Union</h4>
-    </div>
-
     <img class="profilepic" src="/Images/profile.jpg" alt="Profile Picture">
+<div class="card">
+    <h1>Hello, I'm <span id="name">Christian Lucina</span></h1>
+    <p>ID Number: <span id="id">2234887</span></p>
+    <p>Fun Fact: <span id="fact">I am a 3rd year IT student who love to make a coffee</span></p>
+    <p>Favorite Color: <span id="color">My favorite color is Pink</span></p>
 
-    <div class="sport">
-        <h1>Sports:</h1>
-        <ul>
-            <li>Cycling</li>
-            <li>Running</li>
-            <li>Swimming</li>
-        </ul>
+    <div class="footer">
+        Last Edited: <span id="timestamp"></span><br>
+        Page Signature: <span id="signature"></span>
     </div>
+</div>
 
-    <div class="hobbies">
-        <h1>Hobbies:</h1>
-        <ul>
-            <li>Cooking</li>
-            <li>Playing PC games</li>
-            <li>Watching TikTok & Netflix</li>
-        </ul>
-    </div>
+<script>
+    // Timestamp
+    const timestamp = new Date().toLocaleString();
+    document.getElementById("timestamp").innerText = timestamp;
+
+    // Generate a unique hash (fake signature)
+    const name = document.getElementById("name").innerText.trim();
+    const id = document.getElementById("id").innerText.trim();
+    const color = document.getElementById("color").innerText.trim();
+    const data = name + id + color;
+
+    function simpleHash(str) {
+        let hash = 0;
+        for (let i = 0; i < str.length; i++) {
+            hash = (hash << 5) - hash + str.charCodeAt(i);
+            hash = hash & hash;
+        }
+        return Math.abs(hash).toString(16);
+    }
+
+    document.getElementById("signature").innerText = simpleHash(data);
+</script>
+
 </body>
 </html>
